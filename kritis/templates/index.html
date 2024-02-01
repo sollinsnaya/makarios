@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert an image to a paint by numbers</title>
+</head>
+<body>
+    <h1>Convert and image to a paint by number</h1>
+
+    <input type="file" id="fileInput" accept="image/*" required>
+    <button onclick="uploadAndManipulate()">Do the thing</button>
+
+    <h2>Uploaded Image</h2>
+    <canvas id="canvas" width="300" height="300"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.1/fabric.min.js"></script>
+    <script>
+        function uploadAndManipulate() {
+            var fileInput = document.getElementById('fileInput');
+            var canvas = new fabric.Canvas('canvas');
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                fabric.Image.fromURL(e.target.result, function (img) {
+                    canvas.clear();
+                    canvas.add(img);
+                });
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    </script>
+</body>
+</html>

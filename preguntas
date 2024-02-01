@@ -1,0 +1,27 @@
+#de mas boba a menos boba
+
+1. por que el commit va con mi usuario de rh, y no con mi usuario personal?
+   A. probablemente por que pycharm autentica con la cuenta personal, y visual studio con la del trabajo?
+
+2. create a package... what the fuck is a package?
+   A. The purpose of a package is to group related functionality together in a structured manner.
+
+3. What do I need to do if I wanted to run my application on containers?
+
+4. Define libraries in the bottom to avoid Circular imports? wtf is a circular import?.
+
+5. How does one decide what kind of architecture to use for their application?
+
+6. So I have this code from before, and now I don't needed but don't necessarily want to delete it. do I just gitignore it?
+
+7. I get code 403 forbidden.. why? I understand if the shit doesn't work, but why 403 and not 404?
+       A. Got error 403, because there was another application using port 5000
+
+8. So event handling? Can python do it? I don't see how to do this shit without saving the image. 
+
+9. When I design a solution I have like product specs and note releases that I match with customer requirementes. How do I do that here? how do I know who does what?
+
+
+
+
+
