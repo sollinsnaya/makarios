@@ -6,3 +6,4 @@ from kritis import app
 def index():
     image = 'im an image'
     return render_template('index.html', title='Home', image=image)
+

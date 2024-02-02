@@ -17,9 +17,12 @@
 7. I get code 403 forbidden.. why? I understand if the shit doesn't work, but why 403 and not 404?
        A. Got error 403, because there was another application using port 5000
 
-8. So event handling? Can python do it? I don't see how to do this shit without saving the image. 
+8. So event handling? Can python do it? I don't see how to do this shit without saving the image.
 
-9. When I design a solution I have like product specs and note releases that I match with customer requirementes. How do I do that here? how do I know who does what?
+9. When I design a solution I have like product specs and note releases that I match with customer requirements. How do I do that here? how do I know who does what?
+
+10. What is a hackaton?
+
 
 
 
