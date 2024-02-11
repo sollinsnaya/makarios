@@ -6,13 +6,16 @@
     <title>Convert an image to a paint by numbers</title>
 </head>
 <body>
-    <h1>Convert and image to a paint by number</h1>
+    <h1>Convert an image to a paint by number</h1>
 
     <input type="file" id="fileInput" accept="image/*" required>
     <button onclick="upload()">Upload</button>
     
     <h2>Uploaded Image</h2>
     <img id="imageDisplay" style="max-width: 100%">
+
+    <h1>Data Transfer between Python and JavaScript</h1>
+    <button onclick="getDataFromPython()">Get Data from Python</button>
 
     <script>
         function upload() {
@@ -22,12 +25,24 @@
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                // Set the source of the image element to the loaded image data
                 imageDisplay.src = e.target.result;
             };
-
-            // Read the selected image file as a data URL
             reader.readAsDataURL(fileInput.files[0]);
+        }
+    </script>
+
+    <script>
+        function getDataFromPython() {
+            fetch('/get_data')
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Data received from Python:', data);
+                    alert(data.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+                return data
         }
     </script>
 </body>

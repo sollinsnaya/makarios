@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "makarios"
+version = "0.1.0"
+description = "PaintByNumbers is a front-end application designed to transform regular images into a painting-by-number canvas."
+authors = ["Solli <sollinsnaya@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+opencv-python = "^4.9.0.80"
+Flask = "^3.0.2"
+matplotlib = "^3.8.2"
+
+[tool.poetry.group.dev.dependencies]
+numpy = "^1.26.4"
+cv = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
