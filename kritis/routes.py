@@ -41,10 +41,13 @@ def get_data():
     image_array = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
     #Process the image
-    original_edges = cv2.Canny(image_array, threshold1=30, threshold2=100)
-    cv2.imwrite('/Users/sdennis/Desktop/Makarios/images/uploaded_image.jpg',original_edges)
 
-    processed_image= im.fromarray(original_edges)
+    gray = cv2.cvtColor(image_array, cv2.COLOR_RGB2GRAY)
+    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 115, 1)
+
+    #cv2.imwrite('/Users/sdennis/Desktop/Makarios/images/uploaded_image.jpg',thresh)
+
+    processed_image= im.fromarray(thresh)
 
     #return processed_image
     # Save the processed image to a BytesIO object
