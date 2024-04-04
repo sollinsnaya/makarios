@@ -14,8 +14,10 @@
     <h2>Uploaded Image</h2>
     <img id="imageDisplay" style="max-width: 100%">
 
-    <h1>Data Transfer between Python and JavaScript</h1>
-    <button onclick="Transform Image into Paint by Number Canvas()">TransformImage</button>
+    <button onclick="GetDataFromPython()">ProcessImage</button>
+
+    <h2>Processed Image</h2>
+    <img id="processedImageDisplay" style="max-width: 100%">
 
     <script>
         function upload() {
@@ -49,16 +51,16 @@
 
     <script>
         function GetDataFromPython() {
-            fetch('/get_data')
+            fetch('/get_data', {
+        method: 'POST'})
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Data received from Python:', data);
-                    alert(data.message);
+                    const processedImageDisplay = document.getElementById('processedImageDisplay');
+                    processedImageDisplay.src = 'data:image/jpeg;base64,' + data.processed_image_base64;
                 })
                 .catch(error => {
                     console.error('Error:', error);
                 });
-                return data
         }
     </script>
 </body>
