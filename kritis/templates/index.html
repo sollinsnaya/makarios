@@ -15,7 +15,7 @@
     <img id="imageDisplay" style="max-width: 100%">
 
     <h1>Data Transfer between Python and JavaScript</h1>
-    <button onclick="getDataFromPython()">Get Data from Python</button>
+    <button onclick="Transform Image into Paint by Number Canvas()">TransformImage</button>
 
     <script>
         function upload() {
@@ -28,11 +28,27 @@
                 imageDisplay.src = e.target.result;
             };
             reader.readAsDataURL(fileInput.files[0]);
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+
+            fetch('/uploadImage', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        // Handle response from the backend
+        console.log('Image upload request sent successfully');
+    })
+    .catch(error => {
+        // Handle any errors
+        console.error('Error sending image upload request:', error);
+    });
         }
     </script>
 
     <script>
-        function getDataFromPython() {
+        function GetDataFromPython() {
             fetch('/get_data')
                 .then(response => response.json())
                 .then(data => {

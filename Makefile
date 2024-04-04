@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 PY_CMD := poetry run python
-FLASK :=  -m flask --app ./main.py run --port 5001
+FLASK :=  -m flask --app main.py run --port 5001
 PYTEST_CMD := ${PY_CMD} -m pytest
 TEST_DIR := test/
 Y = echo 'k'
