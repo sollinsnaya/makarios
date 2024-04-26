@@ -11,5 +11,4 @@ run:
 
 .PHONY: test
 test:
-	${Y}
-
+	${PYTEST_CMD} ${TEST_DIR}
